@@ -16,6 +16,8 @@
  	background-color: #efecdb !important;
  	background-repeat: repeat;
  	background-position: top;
+ 	color:#532f15 !important;
+ 	font-size: 16px !important;
  	background-image: url('http://localhost/jrrosenstudio/wp-content/uploads/2018/07/bg_tile.jpg') !important;
  }
  .fusion-header-v4 .fusion-header{
@@ -33,10 +35,20 @@
  	border: none !important;
  }
  .fusion-header-wrapper{
- 	z-index: 10 !important;
  }
  .fusion-header{
  	background-color: transparent !important;
+ }
+ .fusion-main-menu .sub-menu{
+ 	    background-color: #3e9ab0 !important;
+ 	    border-top: none !important;
+ }
+ .fusion-main-menu .sub-menu li a{
+ 	border: none !important;
+ 	color: #fff !important;
+ }
+ .fusion-main-menu .sub-menu .current_page_item > a,.fusion-main-menu .sub-menu li a:hover {
+ 	background-color: #a0ce4e !important;
  }
  #wrapper{
  	background: none !important;
@@ -147,6 +159,77 @@
  }
  img.lightbox{
  	border: 1px solid #551f05;
-    padding: 9px;
-    background-color: #f1ebdb;
+ 	padding: 9px;
+ 	background-color: #f1ebdb;
+ 	    margin-right: 15px;
+    margin-bottom: 15px;
  }
+
+ /* newsletter */
+ .testimonials_container{
+ 	clear: both;
+ 	width: 100%;
+ 	float: left;
+ 	background-image: url('./assets/testimonial_bg.jpg');
+ 	background-position: top left;
+ 	background-repeat: no-repeat;
+ 	padding: 0px 20px 20px;
+ }
+ #newsletter{
+ 	float: left;
+ 	width: 26%;
+ 	padding: 20px 20px;
+ 	background-color: #fff;
+ 	border-radius: 5px;
+ 	margin-top: 15px;
+ }
+ #newsletter .input{
+ 	border: 1px solid #ccc;
+ 	background-color: #fff;
+ 	font-size: 12px;
+ 	padding: 4px;
+ 	margin-bottom: 15px;
+ 	height: 24px;
+ }
+ #newsletter .button{
+ 	background-image: url('./assets/button_small.gif');
+ 	background-repeat: no-repeat;
+ 	background-position: bottom;
+ 	border: none;
+ 	padding: 5px 10px;
+ 	float: right;
+ 	border-radius: 6px;
+ 	font-size: 12px;
+ 	color: #fff;
+ }
+ .special_font{
+ 	background-image: url('./assets/icon_mail.gif');
+ 	color: #037b8d;
+ 	background-position: top left;
+ 	background-repeat: no-repeat;
+ 	padding-left: 35px;
+ 	padding-bottom: 12px;
+ }
+ .testimonial_home{
+ 	float: right;
+ 	width: 60%;
+ }
+ .testimonial_home h3 a{
+ 	color: #551f05;
+ 	font-weight: bold;
+ 	text-decoration: underline; 
+ }
+ /*---------------------*/
+ a, a:link{
+ 	color: #551f05;
+    outline: none;
+ }
+ h1 {
+    color: #551f05 !important;
+    font-size: 18px !important;
+    margin: 0px !important;
+    padding: 10px 0px 10px !important;
+}
+.post-content h1{
+	font-weight: bold !important;
+}
