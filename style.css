@@ -1,0 +1,152 @@
+/*
+ Theme Name:   JRROSEN child
+ Theme URI:    http://naieem.me/
+ Description:  JRROSEN avada Child Theme
+ Author:       Naieem Mahmud Supto
+ Author URI:   http://naieem.me
+ Template:     Avada-5
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  jrrosen-child
+ */
+
+ body{
+ 	background-color: #efecdb !important;
+ 	background-repeat: repeat;
+ 	background-position: top;
+ 	background-image: url('http://localhost/jrrosenstudio/wp-content/uploads/2018/07/bg_tile.jpg') !important;
+ }
+ .fusion-header-v4 .fusion-header{
+ 	padding-top: 0px !important;
+ }
+ .fusion-header .fusion-logo{
+ 	margin-top: 0 !important;
+ }
+ .fusion-header-v4 .fusion-header{
+ 	border-bottom: none !important;
+ 	padding-bottom: 75px !important;
+ }
+ .fusion-secondary-main-menu{
+ 	background: none !important;
+ 	border: none !important;
+ }
+ .fusion-header-wrapper{
+ 	z-index: 10 !important;
+ }
+ .fusion-header{
+ 	background-color: transparent !important;
+ }
+ #wrapper{
+ 	background: none !important;
+ }
+ #main{
+ 	background-color: transparent !important;
+ }
+ .fusion-secondary-main-menu{
+ 	position: relative !important;
+ 	top: -80px !important;
+ }
+ .fusion-main-menu-search{
+ 	display: none !important;
+ }
+ .fusion-main-menu > ul > li > a {
+ 	color: #fff !important;
+ 	text-transform: uppercase !important;
+ }
+ .fusion-logo{
+ 	padding-left: 60px !important;
+ }
+ .fusion-footer-copyright-area {
+ 	background-color: transparent !important;
+ 	border: none !important;
+ 	padding-bottom: 150px !important;
+ 	background-image: url(http://localhost/jrrosenstudio/wp-content/uploads/2018/07/footer_design.jpg) !important;
+ 	background-repeat: no-repeat !important;
+ 	background-position: top center !important;
+ }
+ .fusion-footer{
+ 	background-image: url(http://localhost/jrrosenstudio/wp-content/uploads/2018/07/grass_tile.jpg);
+ 	background-repeat: repeat-x;
+ 	background-position: bottom;
+ 	padding-top: 25px;
+ }
+ .fusion-sticky-header-wrapper{
+ 	height: 200px !important;
+ }
+ #main{
+ 	padding-top: 0 !important;
+ 	padding-bottom: 0 !important;
+ }
+ #main .fusion-row{
+ 	max-width: 970px !important;
+ 	background-color: #fff !important;
+ 	padding: 10px !important;
+ 	border-radius:10px !important;
+ 	-moz-border-radius:10px !important;
+ 	-webkit-border-radius:10px !important;
+ }
+ .fusion-is-sticky .fusion-sticky-menu-only.fusion-header-v4 .fusion-secondary-main-menu{
+ 	display: none !important;
+ }
+ .tp-bgimg{
+ 	background-size: initial !important;
+ } 
+ #rev_slider_1_1_wrapper,.rev_slider{
+ 	height: 300px !important;
+ }
+ .fusion-footer-copyright-area .fusion-row{
+ 	max-width: 900px !important;
+ 	position: relative;
+ 	top: -35px !important;
+ }
+ .homepage_box_container{
+ 	background-image: url(http://localhost/jrrosenstudio/wp-content/uploads/2018/07/postit.jpg);
+ 	background-repeat: no-repeat;
+ 	background-size: cover;
+ 	padding: 35px 25px 20px;
+ 	float: left;
+ 	min-height: 220px;
+ 	color: #000;
+ 	position: relative;
+ }
+ .homeBox_title{
+ 	text-align: center;
+ 	float: left;
+ 	width: 100%;
+ 	font-size: 17px;
+ 	padding-bottom: 8px;
+ }
+ .homepage_box_wrapper{
+ 	float: left;
+ 	width: 100%;
+ }
+ .homepage_box_left{
+ 	float: left;
+ 	width: 70%;
+ }
+ .homeBox_right{
+ 	float: right;
+ 	width: 25%;
+ }
+ .homeBox_details{
+ 	font-size: 11px;
+ 	line-height: 1.4em;
+ }
+ .link_div{
+ 	float: left;
+ 	width: 100%;
+ 	text-align: center;
+ 	position: absolute;
+ 	bottom: 30px;
+ }
+ .link_div a{
+ 	font-size: 11px;
+ 	color: #e2001a;
+ }
+ img.lightbox{
+ 	border: 1px solid #551f05;
+    padding: 9px;
+    background-color: #f1ebdb;
+ }
