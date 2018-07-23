@@ -35,13 +35,14 @@
  	border: none !important;
  }
  .fusion-header-wrapper{
+ 	z-index: 50 !important;
  }
  .fusion-header{
  	background-color: transparent !important;
  }
  .fusion-main-menu .sub-menu{
- 	    background-color: #3e9ab0 !important;
- 	    border-top: none !important;
+ 	background-color: #3e9ab0 !important;
+ 	border-top: none !important;
  }
  .fusion-main-menu .sub-menu li a{
  	border: none !important;
@@ -161,8 +162,8 @@
  	border: 1px solid #551f05;
  	padding: 9px;
  	background-color: #f1ebdb;
- 	    margin-right: 15px;
-    margin-bottom: 15px;
+ 	margin-right: 15px;
+ 	margin-bottom: 15px;
  }
 
  /* newsletter */
@@ -181,7 +182,7 @@
  	padding: 20px 20px;
  	background-color: #fff;
  	border-radius: 5px;
- 	margin-top: 15px;
+ 	margin-top: 13px;
  }
  #newsletter .input{
  	border: 1px solid #ccc;
@@ -209,27 +210,78 @@
  	background-repeat: no-repeat;
  	padding-left: 35px;
  	padding-bottom: 12px;
+ 	line-height: 17px !important;
  }
  .testimonial_home{
  	float: right;
  	width: 60%;
+ 	font-size: 13px !important;
  }
  .testimonial_home h3 a{
  	color: #551f05;
  	font-weight: bold;
  	text-decoration: underline; 
  }
+ .testimonial_page_container{
+ 	width: 80%;
+ 	background-image: url('./assets/testimonial_bg_small.png');
+ 	background-position: top left;
+ 	background-repeat: no-repeat;
+ 	margin-bottom: 25px;
+ }
+ .testimonial_wrapper{
+ 	padding-bottom: 35px;
+ 	display: block;
+ 	padding: 10px 65px 35px 65px
+ }
+ .testimonial_title{
+ 	display: block;
+ 	width: 100%;
+ 	font-weight: bold;
+ 	text-decoration: underline;
+ 	margin-bottom: 5px;
+ 	font-size: 14px
+ }
+ .testimonial_desc{
+ 	width: 75%;
+ 	font-size: 13px;
+ 	margin-bottom: 15px;
+ }
+ .testimonial_excerpt{
+ 	font-size: 13px;
+ 	margin-bottom: 5px;
+ }
+ .testimonial_footer{
+ 	border-top: 1px dashed #e2e2e2;
+ 	border-bottom: 1px dashed #e2e2e2;
+ 	font-size: 13px;
+ 	width: 75%;
+ 	color: #999;
+ }
+ .testimonial_footer strong{
+ 	margin-right: 10px;
+ }
+ .testimonial_footer span{
+ 	margin-left: 10px;
+ 	margin-right: 10px;
+ }
+ .testimonial_footer a{
+ 	margin-left: 10px;
+ }
  /*---------------------*/
  a, a:link{
  	color: #551f05;
-    outline: none;
+ 	outline: none;
+ }
+ .float-left{
+ 	float: left;
  }
  h1 {
-    color: #551f05 !important;
-    font-size: 18px !important;
-    margin: 0px !important;
-    padding: 10px 0px 10px !important;
-}
-.post-content h1{
-	font-weight: bold !important;
-}
+ 	color: #551f05 !important;
+ 	font-size: 18px !important;
+ 	margin: 0px !important;
+ 	padding: 10px 0px 10px !important;
+ }
+ .post-content h1{
+ 	font-weight: bold !important;
+ }
