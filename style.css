@@ -18,7 +18,7 @@
  	background-position: top;
  	color:#532f15 !important;
  	font-size: 16px !important;
- 	background-image: url('http://localhost/jrrosenstudio/wp-content/uploads/2018/07/bg_tile.jpg') !important;
+ 	background-image: url('./assets/bg_tile.jpg') !important;
  }
  .fusion-header-v4 .fusion-header{
  	padding-top: 0px !important;
@@ -51,6 +51,12 @@
  .fusion-main-menu .sub-menu .current_page_item > a,.fusion-main-menu .sub-menu li a:hover {
  	background-color: #a0ce4e !important;
  }
+ #wrapper .tp-bullets{
+ 	display: none !important;
+ }
+ ol{
+ 	padding: 14px 0 0px 14px !important;
+ }
  #wrapper{
  	background: none !important;
  }
@@ -75,12 +81,12 @@
  	background-color: transparent !important;
  	border: none !important;
  	padding-bottom: 150px !important;
- 	background-image: url(http://localhost/jrrosenstudio/wp-content/uploads/2018/07/footer_design.jpg) !important;
+ 	background-image: url('./assets/footer_design.jpg') !important;
  	background-repeat: no-repeat !important;
  	background-position: top center !important;
  }
  .fusion-footer{
- 	background-image: url(http://localhost/jrrosenstudio/wp-content/uploads/2018/07/grass_tile.jpg);
+ 	background-image: url('./assets/grass_tile.jpg');
  	background-repeat: repeat-x;
  	background-position: bottom;
  	padding-top: 25px;
@@ -115,7 +121,7 @@
  	top: -35px !important;
  }
  .homepage_box_container{
- 	background-image: url(http://localhost/jrrosenstudio/wp-content/uploads/2018/07/postit.jpg);
+ 	background-image: url('./assets/postit.jpg');
  	background-repeat: no-repeat;
  	background-size: cover;
  	padding: 35px 25px 20px;
@@ -165,7 +171,19 @@
  	margin-right: 15px;
  	margin-bottom: 15px;
  }
-
+ .border-none{
+ 	border: none !important
+ }
+ .no-bg{
+ 	background: none !important;
+ }
+ .center-align{
+ 	margin-left: auto !important;
+ 	margin-right: auto !important;
+ 	display: block;
+ 	width: 50%;
+ 	clear: both;
+ }
  /* newsletter */
  .testimonials_container{
  	clear: both;
@@ -179,29 +197,39 @@
  #newsletter{
  	float: left;
  	width: 26%;
- 	padding: 20px 20px;
+ 	padding: 20px 20px 12px;
  	background-color: #fff;
  	border-radius: 5px;
  	margin-top: 13px;
  }
- #newsletter .input{
- 	border: 1px solid #ccc;
- 	background-color: #fff;
- 	font-size: 12px;
- 	padding: 4px;
- 	margin-bottom: 15px;
- 	height: 24px;
+ #newsletter input[type=email]{
+ 	border: 1px solid #ccc !important;
+ 	background-color: #fff !important;
+ 	font-size: 12px !important;
+ 	padding: 4px !important;
+ 	margin-bottom: 15px !important;
+ 	height: 24px !important;
  }
- #newsletter .button{
- 	background-image: url('./assets/button_small.gif');
- 	background-repeat: no-repeat;
- 	background-position: bottom;
- 	border: none;
- 	padding: 5px 10px;
- 	float: right;
- 	border-radius: 6px;
- 	font-size: 12px;
- 	color: #fff;
+ #newsletter input[type=submit]{
+ 	background-image: url('./assets/button_small.gif') !important;
+ 	background-repeat: no-repeat !important;
+ 	background-position: bottom !important;
+ 	border: none !important;
+ 	padding: 5px 6px !important;
+ 	float: right !important;
+ 	border-radius: 6px !important;
+ 	font-size: 12px !important;
+ 	color: #fff !important;
+ }
+ .mailpoet_message {
+ 	float: left !important;
+ 	font-size: 12px !important;
+ }
+ .parsley-custom-error-message {
+ 	color: #b94a48;
+ 	float: left;
+ 	font-size: 12px !important;
+ 	margin-bottom: 5px !important;
  }
  .special_font{
  	background-image: url('./assets/icon_mail.gif');
@@ -285,3 +313,36 @@
  .post-content h1{
  	font-weight: bold !important;
  }
+ .fusion-mobile-menu-icons a:before{
+ 	color: #000 !important;
+ }
+ .fusion-mobile-menu-icons a{
+ 	margin-top: 40px;
+ }
+ .sb-toggle-wrapper {
+ 	display: none !important;
+ }
+ table{
+ 	font-size: 14px;
+ }
+ table >tbody>tr>td{
+ 	padding: 0px 20px 0 0;
+ }
+ /* -------------------------------------------------- */
+ @media only screen and (max-width: 768px) {
+ 	.fusion-header{
+ 		background:none !important;
+ 		padding-bottom: 0px !important;
+ 	}
+ 	.fusion-sticky-header-wrapper{
+ 		height:125px !important;
+ 	}
+ 	.fusion-footer{
+ 		background: none !important;
+ 	}
+ 	.fusion-footer-copyright-area{
+ 		background-size: contain !important;
+ 		padding-bottom: 53px !important;
+ 	}
+ }
+/* ---------------------------------------------------- */

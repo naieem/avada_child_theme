@@ -15,6 +15,12 @@ function theme_enqueue_styles() {
 		wp_get_theme()->get('Version')
 	);
 	wp_enqueue_script('jquery-cycle', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle/3.0.3/jquery.cycle.all.js', array(), '1.0.0', true);
+
+	// use from javascript file wil be like
+	// site.ajax_url
+	wp_localize_script('jquery', 'site', array(
+		'ajax_url' => admin_url('admin-ajax.php'),
+	));
 }
 
 function homepageboxfunc($atts) {
@@ -52,7 +58,11 @@ $all_film = ob_get_clean();
 	return $all_film;
 }
 
-function testimonial_shortcode() {
+function testimonial_shortcode($atts) {
+	$testi = shortcode_atts(array(
+		'shortcode' => '',
+		'testimonialpagelink' => '',
+	), $atts);
 	$args = array(
 		'offset' => 0,
 		'category' => 0,
@@ -66,7 +76,6 @@ function testimonial_shortcode() {
 		'post_status' => 'draft, publish, future, pending, private',
 		'suppress_filters' => true,
 	);
-
 	$testimonials = wp_get_recent_posts($args, ARRAY_A);
 	wp_reset_query();
 	ob_start();
@@ -80,21 +89,36 @@ function testimonial_shortcode() {
 				Newsletter Signup
 
 			</div>
-
-			<form action="" method="post" id="newsletter_form">
-
-				<input type="hidden" name="wp3_newsletter_subscribe" value="true">
-
-				<input name="wp3newsletter_email" onfocus="if(this.value=='Email Address')this.value='';" onblur="if(this.value=='')this.value='Email Address';" type="text" class="input" value="Email Address">
-
+			<?php
+echo do_shortcode("[" . $testi['shortcode'] . "]");
+	?>
+			<!-- <form id="newsletter_form">
+				<input type="hidden" name="newsletter_subscribe" value="true">
+				<input name="email" onfocus="if(this.value=='Email Address')this.value='';" onblur="if(this.value=='')this.value='Email Address';" type="text" class="input" value="Email Address">
 				<input name="submit" type="submit" class="button" value="Submit">
-
-			</form>
+			</form> -->
 		</div>
+		<script type="text/javascript">
+			// jQuery(document).ready(function($) {
+			// 	jQuery(document).on( 'submit', 'form#newsletter_form', function(event) {
+			// 		event.preventDefault();
+			// 		debugger;
+			// 		var data = $(this).serialize();
+			// 		jQuery.ajax({
+			// 			url : site.ajax_url,
+			// 			type : 'post',
+			// 			data : data + "&action=send_mail",
+			// 			success : function( response ) {
+			// 				alert(response);
+			// 			}
+			// 		});
+			// 	});
+			// });
 
+		</script>
 		<div class="testimonial_home">
 			<h3>
-				<a href="http://JRRosenStudio.com/testimonials/">Testimonials</a>
+				<a href="<?php echo $testi['testimonialpagelink'] ?>">Testimonials</a>
 			</h3>
 			<script type="text/javascript">
 				jQuery(function(){
@@ -109,7 +133,7 @@ foreach ($testimonials as $testimonial) {
 		echo $testimonial["post_excerpt"];
 		echo '"<br><br>';
 		echo 'To read ' . $testimonial["post_title"] . '\'s Testimonial, click below!<br>';
-		echo '<em><strong><a href="' . get_permalink($testimonial["ID"]) . '">' . $testimonial["post_title"] . '</a></strong></em>';
+		echo '<em><strong><a href="' . $testi['testimonialpagelink'] . '">' . $testimonial["post_title"] . '</a></strong></em>';
 		echo '</div>';
 	}
 	?>
@@ -204,8 +228,28 @@ function testimonial_post_type_init() {
 		'has_archive' => true,
 		'hierarchical' => false,
 		'menu_position' => null,
-		'supports' => array('title', 'author', 'excerpt'),
+		'supports' => array('title', 'author', 'excerpt', 'editor'),
 	);
 
 	register_post_type('testimonial', $args);
+}
+
+/**
+ * Demo request endpoint handling from ajax call
+ */
+add_action("wp_ajax_send_mail", "send_mail");
+add_action("wp_ajax_nopriv_send_mail", "send_mail");
+
+function send_mail() {
+	$name = $_POST['email'];
+	echo $name;
+	$msg = "First line of text\nSecond line of text";
+
+// use wordwrap() if lines are longer than 70 characters
+	$msg = wordwrap($msg, 70);
+
+// send email
+	$mail = mail("naieemsupto@gmail.com", "My subject", $msg);
+	echo $mail;
+	die();
 }
