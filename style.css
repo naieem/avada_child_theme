@@ -328,6 +328,63 @@
  table >tbody>tr>td{
  	padding: 0px 20px 0 0;
  }
+
+ /* ---------- contact page styles --------- */
+ .contact_title{
+ 	float: left;
+ 	margin-right: 20px;
+ 	font-weight: bold;
+ 	font-size: 13px;
+ 	min-width: 80px;
+ }
+ .wpcf7 form p{
+ 	float: left;
+ 	width: 100%;
+ }
+ .wpcf7 form p label{
+ 	float: left;
+ 	width: 25%;
+ }
+ .wpcf7 form p span{
+ 	float: left;
+ 	width: 75%;
+ }
+ .contact_detail{
+ 	font-size: 13px;
+ }
+ .post-content p{
+ 	font-size: 13px;
+ }
+ .post-content p strong{
+ 	font-size: 15px;
+ }
+ .wpcf7-form .wpcf7-text{
+ 	height: 25px !important;
+ }
+ .contact-form-submit{
+ 	text-align: center;
+ }
+ .contact-form-submit input[type="submit"]{
+ 	padding: 5px 20px !important;
+ 	background-color: #037b8c !important;
+ }
+ .gm-style .gm-style-iw{
+ 	width: 155px !important;
+ }
+ .largerMap{
+ 	border: none !important;
+    color: #FFF !important;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: #037b8c !important;
+    border-radius: 5px;
+    padding: 5px 12px;
+    display: inline-block;
+    margin-top: 10px;
+ }
+ .largeViewContainer{
+ 	text-align: center;
+ }
  /* -------------------------------------------------- */
  @media only screen and (max-width: 768px) {
  	.fusion-header{

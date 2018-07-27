@@ -3,6 +3,7 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_styles'); // querying styles
 add_shortcode('homepagebox', 'homepageboxfunc'); // homepage 3 boxes shortcode
 add_shortcode('newsletterbox', 'testimonial_shortcode'); // testimonial homepage shortcode
 add_shortcode('testimoniallist', 'testimonial_list'); // testimonial list shortcode
+add_shortcode('googlemap', 'googleMapsIntegration'); // testimonial list shortcode
 add_action('init', 'testimonial_post_type_init'); // adding testimonial post type
 function theme_enqueue_styles() {
 
@@ -23,6 +24,11 @@ function theme_enqueue_styles() {
 	));
 }
 
+/**
+ * showing three boxes in homepage
+ * @param  $atts
+ * @return html of boxes
+ */
 function homepageboxfunc($atts) {
 	$boxes = shortcode_atts(array(
 		'title' => '',
@@ -58,6 +64,11 @@ $all_film = ob_get_clean();
 	return $all_film;
 }
 
+/**
+ * showing newsletter and testimonial slider in the page
+ * @param  $atts
+ * @return testimonials and newletter html
+ */
 function testimonial_shortcode($atts) {
 	$testi = shortcode_atts(array(
 		'shortcode' => '',
@@ -102,7 +113,7 @@ echo do_shortcode("[" . $testi['shortcode'] . "]");
 			// jQuery(document).ready(function($) {
 			// 	jQuery(document).on( 'submit', 'form#newsletter_form', function(event) {
 			// 		event.preventDefault();
-			// 		debugger;
+			//
 			// 		var data = $(this).serialize();
 			// 		jQuery.ajax({
 			// 			url : site.ajax_url,
@@ -149,6 +160,10 @@ $newsletter_form = ob_get_clean();
 	return $newsletter_form;
 }
 
+/**
+ * showing testimonial post types list in a page
+ * @return html
+ */
 function testimonial_list() {
 	$args = array(
 		'offset' => 0,
@@ -252,4 +267,69 @@ function send_mail() {
 	$mail = mail("naieemsupto@gmail.com", "My subject", $msg);
 	echo $mail;
 	die();
+}
+
+/**
+ * googleMapsIntegration using shortcode
+ * @param  $atts{apikey,height,width}
+ * @return google maps integration in html
+ */
+function googleMapsIntegration($atts) {
+	$maps = shortcode_atts(array(
+		'apikey' => '',
+		'height' => '',
+		'width' => '',
+		'searchaddress' => '',
+	), $atts);
+	ob_start();?>
+	<div id="googlemap" style="width: <?php echo $maps['width'] ?>;height: <?php echo $maps['height'] ?>;">
+	</div>
+	<div class="largeViewContainer">
+		<a href="http://maps.google.com/maps?q=<?php echo $maps['searchaddress']; ?>" class="largerMap" target="_blank">View Larger Map</a>
+	</div>
+	<script type="text/javascript">
+	var geocoder;
+	var map;
+	var query = "<?php echo $maps['searchaddress']; ?>";
+	function initialize() {
+
+		geocoder = new google.maps.Geocoder();
+		var myOptions = {
+			zoom: 11,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		}
+		map = new google.maps.Map(document.getElementById("googlemap"), myOptions);
+		codeAddress();
+	}
+
+	function codeAddress() {
+
+		var address = query;
+		geocoder.geocode( { 'address': address}, function(results, status) {
+			if (status == google.maps.GeocoderStatus.OK) {
+				map.setCenter(results[0].geometry.location);
+				var infowindow = new google.maps.InfoWindow({
+					content: unescape("J.R. Rosen Studio, 29 Beale Street, Quincy, MA 02170")
+				});
+				var marker = new google.maps.Marker({
+					map: map,
+					position: results[0].geometry.location
+				});
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.open(map,marker);
+				});
+				infowindow.open(map,marker);
+			} else {
+				alert("Geocode was not successful for the following reason: " + status);
+			}
+		});
+	}
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=<?php echo $maps['apikey'] ?>&callback=initialize">
+</script>
+
+	<?php
+$map = ob_get_clean();
+	return $map;
 }
